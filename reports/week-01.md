@@ -44,7 +44,7 @@ Proportional Fair обеспечивает наибольшую суммарну
 У Best CQI суммарный Throughput проседает до 8.5–8.9 Мбит/с, а средняя скорость на абонента падает до 0.87–0.91 Мбит/с. При этом реальный объём данных прокачивается почти исключительно через одного абонента с наивысшим качеством радиоканала.
 
 <p align="center">
-  <img src="figures/01_throughput_matrix.png" alt="Суммарный и средний Throughput" width="850" />
+  <img src="../figures/week-01/01_throughput_matrix.png" alt="Суммарный и средний Throughput" width="850" />
 </p>
 
 ### 2. Задержка доставки пакетов (Latency)
@@ -55,7 +55,7 @@ Proportional Fair обеспечивает наибольшую суммарну
 В случае Best CQI средняя задержка подскакивает до 1.8–2.0 секунд (1780–2002 мс). Так как девять терминалов почти не получают грантов на передачу, пакеты в буферах RLC накапливаются в очередях.
 
 <p align="center">
-  <img src="figures/02_latency_matrix.png" alt="Средняя задержка доставки пакетов" width="650" />
+  <img src="../figures/week-01/02_latency_matrix.png" alt="Средняя задержка доставки пакетов" width="650" />
 </p>
 
 ### 3. Индекс справедливости Джейна (JFI)
@@ -64,7 +64,7 @@ Proportional Fair обеспечивает наибольшую суммарну
 При использовании Best CQI индекс падает до 0.107–0.117 из-за монополизации радиоресурса абонентом с максимальным CQI.
 
 <p align="center">
-  <img src="figures/03_fairness_jfi_matrix.png" alt="Индекс справедливости Джейна" width="650" />
+  <img src="../figures/week-01/03_fairness_jfi_matrix.png" alt="Индекс справедливости Джейна" width="650" />
 </p>
 
 ### 4. Утилизация радиоресурса (PRB Utilization)
@@ -73,7 +73,7 @@ Proportional Fair обеспечивает наибольшую суммарну
 Proportional Fair и Best CQI группируют ресурсные блоки в группы RBG (для 25 PRB размер RBG равен 2) и утилизируют 24 PRB из 25, обеспечивая 96.0% загрузки радиоканала.
 
 <p align="center">
-  <img src="figures/04_prb_utilization_matrix.png" alt="Утилизация PRB" width="650" />
+  <img src="../figures/week-01/04_prb_utilization_matrix.png" alt="Утилизация PRB" width="650" />
 </p>
 
 ### 5. Скорость худшего абонента (Worst UE Throughput)
@@ -82,18 +82,18 @@ Proportional Fair и Best CQI группируют ресурсные блоки
 При алгоритме Best CQI пропускная способность худшего абонента деградирует до 0.034 Мбит/с (34 кбит/с), что свидетельствует о практически полном отсутствии обслуживания на краю соты.
 
 <p align="center">
-  <img src="figures/05_worst_ue_matrix.png" alt="Пропускная способность худшего абонента" width="650" />
+  <img src="../figures/week-01/05_worst_ue_matrix.png" alt="Пропускная способность худшего абонента" width="650" />
 </p>
 
 ### Сводный дашборд
 Сравнение всех пяти ключевых метрик по матрице сценариев:
 
 <p align="center">
-  <img src="figures/kpi_matrix_dashboard.png" alt="Сводный дашборд матрицы метрик" width="950" />
+  <img src="../figures/week-01/kpi_matrix_dashboard.png" alt="Сводный дашборд матрицы метрик" width="950" />
 </p>
 
 ## Материалы и скрипты
 - Сценарий симуляции: [`scenario-matrix.cc`](../../ns-3.43/scratch/scenario-matrix.cc)
 - Анализатор и генератор графиков: [`analyze_kpis.py`](../scripts/analyze_kpis.py)
 - Каталоги трассировок: `reports/WB/` и `reports/SB/`
-- Графика отчёта: [`01_throughput_matrix.png`](figures/01_throughput_matrix.png), [`02_latency_matrix.png`](figures/02_latency_matrix.png), [`03_fairness_jfi_matrix.png`](figures/03_fairness_jfi_matrix.png), [`04_prb_utilization_matrix.png`](figures/04_prb_utilization_matrix.png), [`05_worst_ue_matrix.png`](figures/05_worst_ue_matrix.png), [`kpi_matrix_dashboard.png`](figures/kpi_matrix_dashboard.png)
+- Графика отчёта: [`01_throughput_matrix.png`](../figures/week-01/01_throughput_matrix.png), [`02_latency_matrix.png`](../figures/week-01/02_latency_matrix.png), [`03_fairness_jfi_matrix.png`](../figures/week-01/03_fairness_jfi_matrix.png), [`04_prb_utilization_matrix.png`](../figures/week-01/04_prb_utilization_matrix.png), [`05_worst_ue_matrix.png`](../figures/week-01/05_worst_ue_matrix.png), [`kpi_matrix_dashboard.png`](../figures/week-01/kpi_matrix_dashboard.png)
