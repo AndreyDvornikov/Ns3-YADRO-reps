@@ -40,7 +40,7 @@ flowchart LR
 
 ## Конфигурация сценария
 
-Моделирование выполнено на базе сценария [`scenario-matrix.cc`](../ns-3.43/scratch/scenario-matrix.cc) в среде **ns-3.43 (модуль LTE/LENA)**:
+Моделирование выполнено на базе сценария [`scenario-matrix.cc`](../../ns-3.43/scratch/scenario-matrix.cc) в среде **ns-3.43 (модуль LTE/LENA)**:
 - **Базовая станция (eNodeB):** 1 сота, системная полоса 5 МГц (25 PRB, несущая частота 2.1 ГГц).
 - **Абонентские терминалы (UE):** 10 активных пользователей, перемещающихся в пределах радиуса соты по модели `RandomWalk2dMobilityModel` со скоростью пешехода ($v = 3$ км/ч $\approx 0.83$ м/с).
 - **Модели радиоканала:**
@@ -79,7 +79,7 @@ flowchart LR
 - `DL_SERVICE_GAP/MAX_TTI` — максимальный интервал между последовательными грантами (критерий непрерывности обслуживания).
 
 <p align="center">
-  <img src="01_radar_comparison_wb_sb.png" alt="Радарное сравнение планировщиков MAC: а) Wideband, б) Subband" width="950" />
+  <img src="figures/01_radar_comparison_wb_sb.png" alt="Радарное сравнение планировщиков MAC: а) Wideband, б) Subband" width="950" />
 </p>
 
 #### Ключевые выводы по радарным профилям:
@@ -108,7 +108,7 @@ flowchart LR
 Для наглядного подтверждения принципа работы планировщиков сформирована 2D-карта аллокации частотно-временных ресурсов (сетка 25 PRB $\times$ 35 TTI) на основе трассировок `DlMacStats.txt`:
 
 <p align="center">
-  <img src="02_resource_grid_rr_pf_bcqi.png" alt="Частотно-временная ресурсная сетка планировщиков RR, PF и BCQI" width="950" />
+  <img src="figures/02_resource_grid_rr_pf_bcqi.png" alt="Частотно-временная ресурсная сетка планировщиков RR, PF и BCQI" width="950" />
 </p>
 
 #### Анализ физического распределения ресурсов:
@@ -128,7 +128,7 @@ flowchart LR
 Индивидуальные скорости каждого из 10 абонентских терминалов (UE 1 – UE 10) в режимах Wideband и Subband:
 
 <p align="center">
-  <img src="03_per_ue_throughput_ns3.png" alt="Распределение пропускной способности по абонентам UE 1..10" width="950" />
+  <img src="figures/03_per_ue_throughput_ns3.png" alt="Распределение пропускной способности по абонентам UE 1..10" width="950" />
 </p>
 
 - **При Round Robin:** все абоненты получают строго одинаковую скорость **1.44–1.45 Мбит/с**. Дисперсия скоростей равна нулю.
@@ -142,7 +142,7 @@ flowchart LR
 Сопоставление средней задержки пакетов (в логарифмическом масштабе) и индекса справедливости Джейна ($JFI = (\sum x_i)^2 / (n \cdot \sum x_i^2)$):
 
 <p align="center">
-  <img src="04_latency_and_fairness_ns3.png" alt="Задержка доставки пакетов и индекс справедливости Джейна" width="950" />
+  <img src="figures/04_latency_and_fairness_ns3.png" alt="Задержка доставки пакетов и индекс справедливости Джейна" width="950" />
 </p>
 
 - **Индекс справедливости (JFI):**
@@ -169,12 +169,12 @@ flowchart LR
 ---
 
 ## Воспроизводимость и скрипты
-- Исходный сценарий симуляции: [`scenario-matrix.cc`](../ns-3.43/scratch/scenario-matrix.cc)
-- Анализатор метрик симуляции: [`analyze_kpis.py`](../ns-3.43/tools/analyze_kpis.py)
-- Скрипт генерации графики второй недели: [`generate_ns3_pure_plots.py`](../ns-3.43/tools/generate_ns3_pure_plots.py)
+- Исходный сценарий симуляции: [`scenario-matrix.cc`](../../ns-3.43/scratch/scenario-matrix.cc)
+- Анализатор метрик симуляции: [`analyze_kpis.py`](../scripts/analyze_kpis.py)
+- Скрипт генерации графики второй недели: [`generate_ns3_pure_plots.py`](../scripts/generate_ns3_pure_plots.py)
 - Графические материалы отчёта:
-  - Радарные диаграммы WB/SB: [`01_radar_comparison_wb_sb.png`](01_radar_comparison_wb_sb.png)
-  - Частотно-временная ресурсная сетка PRB: [`02_resource_grid_rr_pf_bcqi.png`](02_resource_grid_rr_pf_bcqi.png)
-  - Распределение Throughput по абонентам UE 1..10: [`03_per_ue_throughput_ns3.png`](03_per_ue_throughput_ns3.png)
-  - Задержка доставки и индекс справедливости Джейна: [`04_latency_and_fairness_ns3.png`](04_latency_and_fairness_ns3.png)
-- Отчёт первой недели: [`week-01.md`](week-01.md)
+  - Радарные диаграммы WB/SB: [`01_radar_comparison_wb_sb.png`](figures/01_radar_comparison_wb_sb.png)
+  - Частотно-временная ресурсная сетка PRB: [`02_resource_grid_rr_pf_bcqi.png`](figures/02_resource_grid_rr_pf_bcqi.png)
+  - Распределение Throughput по абонентам UE 1..10: [`03_per_ue_throughput_ns3.png`](figures/03_per_ue_throughput_ns3.png)
+  - Задержка доставки и индекс справедливости Джейна: [`04_latency_and_fairness_ns3.png`](figures/04_latency_and_fairness_ns3.png)
+- Отчёт первой недели: [`week-01.md`](../week-01/week-01.md)
